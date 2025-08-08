@@ -1,0 +1,19 @@
+* Demo
+
+** =sqlglot-transpile-region=: DuckDB to Hive
+
+#+begin_src sql
+  SELECT EPOCH_MS(1618088028295)
+#+end_src
+
+** =sqlglot-transpile-region=: DuckDB to Hive
+
+#+begin_src sql
+  SELECT STRFTIME(x, '%y-%-m-%S')
+#+end_src
+
+** =sqlglot-format-region=: To Spark with identifiers delimitered
+
+#+begin_src sql
+  WITH baz AS (SELECT a, c FROM foo WHERE a = 1) SELECT f.a, b.b, baz.c, CAST("b"."a" AS REAL) d FROM foo f JOIN bar b ON f.a = b.a LEFT JOIN baz ON f.a = baz.a
+#+end_src
