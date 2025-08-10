@@ -75,12 +75,11 @@ When nil, apply SQLGlot's default formatting."
   (append sqlglot--cached-dialects nil))
 
 (defun sqlglot--get-script-path ()
-  "Get the path to the sqlglot.el.py script."
+  "Get path to sqlglot.el.py script via custom setting, library location, or current directory."
   (or sqlglot-script-path
-      (let ((base-file (or load-file-name buffer-file-name)))
-        (if base-file
-            (expand-file-name "sqlglot.el.py" (file-name-directory base-file))
-          (expand-file-name "sqlglot.el.py" default-directory)))))
+      (when-let ((library-path (locate-library "sqlglot")))
+        (expand-file-name "sqlglot.el.py" (file-name-directory library-path)))
+      (expand-file-name "sqlglot.el.py" default-directory)))
 
 (defun sqlglot--run-script-command (args)
   "Execute the SQLGlot script with ARGS and return the result."
