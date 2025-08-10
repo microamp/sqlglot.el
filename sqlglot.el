@@ -20,7 +20,9 @@
 ;;
 ;; Usage:
 ;;   M-x sqlglot-transpile-region - Transpile selected SQL
+;;   M-x sqlglot-transpile-buffer - Transpile SQL in current buffer
 ;;   M-x sqlglot-format-region    - Format/pretty-print selected SQL
+;;   M-x sqlglot-format-buffer    - Format/pretty-print SQL in current buffer
 
 ;;; Code:
 
@@ -153,6 +155,19 @@ IDENTIFY controls whether to delimit all identifiers."
      (list (region-beginning) (region-end) nil nil sqlglot-default-identify)))
   (sqlglot--process-region "transpile" start end read-dialect write-dialect identify))
 
+;;;###autoload
+(defun sqlglot-transpile-buffer (&optional read-dialect write-dialect identify)
+  "Transpile SQL in entire buffer from READ-DIALECT to WRITE-DIALECT.
+IDENTIFY controls whether to delimit all identifiers."
+  (interactive
+   (if current-prefix-arg
+       (list (let ((read-dialect (sqlglot--read-dialect "Read dialect (optional): " "")))
+               (if (string-empty-p read-dialect) nil read-dialect))
+             (let ((write-dialect (sqlglot--read-dialect "Write dialect (optional): " "")))
+               (if (string-empty-p write-dialect) nil write-dialect))
+             (y-or-n-p "Delimit all identifiers? "))
+     (list nil nil sqlglot-default-identify)))
+  (sqlglot--process-region "transpile" (point-min) (point-max) read-dialect write-dialect identify))
 
 ;;;###autoload
 (defun sqlglot-format-region (start end &optional read-dialect write-dialect identify)
@@ -171,6 +186,19 @@ IDENTIFY controls whether to delimit all identifiers."
      (list (region-beginning) (region-end) nil nil sqlglot-default-identify)))
   (sqlglot--process-region "format" start end read-dialect write-dialect identify))
 
+;;;###autoload
+(defun sqlglot-format-buffer (&optional read-dialect write-dialect identify)
+  "Format/pretty-print SQL in entire buffer with optional READ-DIALECT and WRITE-DIALECT.
+IDENTIFY controls whether to delimit all identifiers."
+  (interactive
+   (if current-prefix-arg
+       (list (let ((read-dialect (sqlglot--read-dialect "Read dialect (optional): " "")))
+               (if (string-empty-p read-dialect) nil read-dialect))
+             (let ((write-dialect (sqlglot--read-dialect "Write dialect (optional): " "")))
+               (if (string-empty-p write-dialect) nil write-dialect))
+             (y-or-n-p "Delimit all identifiers? "))
+     (list nil nil sqlglot-default-identify)))
+  (sqlglot--process-region "format" (point-min) (point-max) read-dialect write-dialect identify))
 
 ;;;###autoload
 (defun sqlglot-check-installation ()

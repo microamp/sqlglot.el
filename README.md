@@ -98,7 +98,9 @@ Supported SQL Dialects:
 
 ``` elisp
 ;; M-x sqlglot-transpile-region - Transpile selected SQL
+;; M-x sqlglot-transpile-buffer - Transpile SQL in current buffer
 ;; M-x sqlglot-format-region    - Format/pretty-print selected SQL
+;; M-x sqlglot-format-buffer    - Format/pretty-print SQL in current buffer
 ```
 
 **Note**: When called with a prefix argument (`C-u`), all interactive functions will prompt you to specify read dialect, write dialect, and whether to delimit identifiers.
