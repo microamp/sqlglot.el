@@ -113,7 +113,11 @@ Supported SQL Dialects:
 
   - [x] Support caching via the variable `sqlglot--cached-dialects`
 
-- [ ] Add an interface to the `optimize` function
+- [ ] Add `sqlglot-transpile-buffer`
+
+- [ ] Add `sqlglot-format-buffer`
+
+- [ ] Add an interface to the `sqlglot.optimize` function
 
 - [ ] Use Transient for configuring read and write dialects
 
