@@ -18,7 +18,7 @@ The sqlglot.el package provides an Emacs interface to SQLGlot for converting SQL
 
 ## Demo
 
-[![asciicast](https://asciinema.org/a/fNsJYQ4yMDekpiPBrPvrEURHC.svg)](https://asciinema.org/a/fNsJYQ4yMDekpiPBrPvrEURHC)
+[![asciicast](https://asciinema.org/a/EUtQc8u2Mtqen0WYp7tJHB0tV.svg)](https://asciinema.org/a/EUtQc8u2Mtqen0WYp7tJHB0tV)
 
 ## Prerequisites
 
