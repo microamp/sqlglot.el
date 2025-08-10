@@ -129,15 +129,11 @@ IDENTIFY controls whether to delimit all identifiers."
              (capitalize command)
              (cond
               ((and read-dialect write-dialect)
-               (if (string= command "transpile")
-                   (format " from %s to %s" read-dialect write-dialect)
-                 (format " (%s → %s)" read-dialect write-dialect)))
+               (format " (%s → %s)" read-dialect write-dialect))
               (read-dialect
                (format " from %s" read-dialect))
               (write-dialect
-               (if (string= command "transpile")
-                   (format " to %s" write-dialect)
-                 (format " as %s" write-dialect)))
+               (format " to %s" write-dialect))
               (t "")))))
 
 ;;;###autoload
