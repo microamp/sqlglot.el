@@ -131,11 +131,11 @@ IDENTIFY controls whether to delimit all identifiers."
              (capitalize command)
              (cond
               ((and read-dialect write-dialect)
-               (format " (%s → %s)" read-dialect write-dialect))
+               (format " from %s to %s (identifiers delimited: %s)" read-dialect write-dialect (if identify "y" "n")))
               (read-dialect
-               (format " from %s" read-dialect))
+               (format " from %s (identifiers delimited: %s)" read-dialect (if identify "y" "n")))
               (write-dialect
-               (format " to %s" write-dialect))
+               (format " to %s (identifiers delimited: %s)" write-dialect (if identify "y" "n")))
               (t "")))))
 
 ;;;###autoload
