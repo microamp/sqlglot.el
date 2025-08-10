@@ -10,9 +10,9 @@
 
 # sqlglot.el
 
-[SQLGlot](https://sqlglot.com/sqlglot.html) is a Python library for parsing and converting SQL queries across multiple database dialects, supporting over 30 platforms like BigQuery, Snowflake, Spark, PostgreSQL, and MySQL. It serves as the foundation for [SQLMesh](https://www.tobikodata.com/sqlmesh).
+[SQLGlot](https://sqlglot.com/sqlglot.html) is a Python library that parses and converts SQL queries between different database dialects. It supports over 30 dialects including BigQuery, Snowflake, Spark, PostgreSQL, MySQL, DuckDB, and Hive.
 
-This Emacs Lisp package offers an interface to SQLGlot, enabling SQL dialect conversion and code formatting directly within Emacs.
+The sqlglot.el package provides an Emacs interface to SQLGlot for converting SQL between dialects and formatting code directly in the editor.
 
 ## Demo
 
