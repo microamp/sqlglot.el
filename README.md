@@ -10,7 +10,9 @@
 
 # sqlglot.el
 
-[SQLGlot](https://sqlglot.com/sqlglot.html) is a Python library that parses and converts SQL queries between different database dialects. It supports over 30 dialects including BigQuery, Snowflake, Spark, PostgreSQL, MySQL, DuckDB, and Hive.
+[SQLGlot](https://sqlglot.com/sqlglot.html) is
+
+> a no-dependency SQL parser, transpiler, optimizer, and engine. It can be used to format SQL or translate between 30 different dialects like DuckDB, Presto / Trino, Spark / Databricks, Snowflake, and BigQuery. It aims to read a wide variety of SQL inputs and output syntactically and semantically correct SQL in the targeted dialects.
 
 The sqlglot.el package provides an Emacs interface to SQLGlot for converting SQL between dialects and formatting code directly in the editor.
 
