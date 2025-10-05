@@ -45,6 +45,8 @@ def transpile_sql(
             write=write_dialect,
             identify=identify,
             pretty=pretty,
+            pad=4,  # TODO: make it configurable
+            indent=4,  # TODO: make it configurable
         )
         if result:
             return result[0]
